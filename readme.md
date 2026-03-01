@@ -192,10 +192,76 @@ Barcode Baba calculates a safety score between 0 and 100 based on ingredient ana
 | 40–59      | RISKY     |
 | 0–39       | AVOID     |
 
-### Missing ingredient handling
+---
 
-If ingredients are not available:
+## Project Structure
 
-- No score is calculated
-- No rating is assigned
-- The system informs the user that scoring cannot be performed
+
+barcode-baba/
+│
+├── client/ # Frontend (React + TypeScript)
+│ │
+│ ├── src/
+│ │ │
+│ │ ├── components/ # Reusable UI components
+│ │ │ ├── Scanner.tsx
+│ │ │ ├── ScoreCard.tsx
+│ │ │ ├── ProfileSetupModal.tsx
+│ │ │ └── ui/ # Base UI components
+│ │ │
+│ │ ├── pages/ # Application pages
+│ │ │ ├── Home.tsx # Mode selection page
+│ │ │ └── Scan.tsx # Scan and result page
+│ │ │
+│ │ ├── hooks/ # Custom React hooks
+│ │ │ ├── use-scan.ts
+│ │ │ └── use-mode.ts
+│ │ │
+│ │ ├── lib/ # Utility functions
+│ │ │
+│ │ ├── App.tsx
+│ │ └── main.tsx
+│ │
+│ └── index.html
+│
+├── server/ # Backend (Express + TypeScript)
+│ │
+│ ├── index.ts # Server entry point
+│ ├── routes.ts # API route definitions
+│ │
+│ └── services/ # Core backend logic
+│ ├── analyzer.ts # Safety scoring engine
+│ └── openfoodfacts.ts # Open Food Facts API integration
+│
+├── shared/ # Shared schemas and types
+│ └── schema.ts
+│
+├── package.json
+├── tsconfig.json
+└── README.md
+
+---
+
+## Future Improvements
+
+- Baba assistant for interactive product queries and explanations  
+- Product comparison to help users choose safer alternatives  
+- Scan history with saved results and safety tracking  
+- Mobile app version (Android and iOS)  
+- Offline barcode scanning with local database caching  
+- Faster analysis using optimized backend and caching  
+- Region-specific safety recommendations based on local dietary guidelines  
+- Expanded database coverage beyond Open Food Facts  
+- Browser extension to analyze food products on shopping websites  
+- Visual ingredient risk breakdown with detailed explanations  
+
+---
+
+## Team - La Amigos
+
+- Arpan Sharma
+- Falgun Kishore Sharma
+- Shaurya Kochhar
+- Tanishka Sharma
+
+---
