@@ -71,30 +71,30 @@ Analyzes:
 
 ## Architecture
 
-┌─────────────────────────────┐
-│ Frontend │
-│ React + TypeScript │
-│ │
-│ • Barcode scanning │
-│ • Mode selection │
-│ • Result display │
-└──────────────┬──────────────┘
-│
-▼
-┌─────────────────────────────┐
-│ Backend │
-│ Express + TypeScript │
-│ │
-│ • API routes │
-│ • Data processing │
-│ • Scoring engine │
-└──────────────┬──────────────┘
-│
-▼
-┌─────────────────────────────┐
-│ Open Food Facts │
-│ Product Data │
-└─────────────────────────────┘
+                 ┌─────────────────────────┐
+                 │        Frontend         │
+                 │    React + TypeScript  │
+                 │                         │
+                 │  • Barcode scanning    │
+                 │  • Mode selection      │
+                 │  • Result display      │
+                 └────────────┬────────────┘
+                              │
+                              ▼
+                 ┌─────────────────────────┐
+                 │        Backend          │
+                 │   Express + TypeScript │
+                 │                         │
+                 │  • API routes          │
+                 │  • Data processing     │
+                 │  • Scoring engine      │
+                 └────────────┬────────────┘
+                              │
+                              ▼
+                 ┌─────────────────────────┐
+                 │     Open Food Facts     │
+                 │      Product Data       │
+                 └─────────────────────────┘
 
 
 ---
