@@ -73,21 +73,21 @@ Analyzes:
 
                  ┌─────────────────────────┐
                  │        Frontend         │
-                 │    React + TypeScript  │
+                 │    React + TypeScript   │
                  │                         │
-                 │  • Barcode scanning    │
-                 │  • Mode selection      │
-                 │  • Result display      │
+                 │  • Barcode scanning     │
+                 │  • Mode selection       │
+                 │  • Result display       │
                  └────────────┬────────────┘
                               │
                               ▼
                  ┌─────────────────────────┐
                  │        Backend          │
-                 │   Express + TypeScript │
+                 │   Express + TypeScript  │
                  │                         │
-                 │  • API routes          │
-                 │  • Data processing     │
-                 │  • Scoring engine      │
+                 │  • API routes           │
+                 │  • Data processing      │
+                 │  • Scoring engine       │
                  └────────────┬────────────┘
                               │
                               ▼
