@@ -31,7 +31,6 @@ The system provides:
 - Ingredient-based risk warnings
 - Mode-specific analysis (General, Baby, Elderly)
 - Vegetarian and vegan status (when available)
-- AI chatbot assistant for product-related questions
 
 If ingredients are not available, the system transparently informs the user and does not calculate a score.
 
@@ -40,6 +39,7 @@ If ingredients are not available, the system transparently informs the user and 
 ## Features
 
 ### Barcode Scanning
+
 - Camera scanning
 - Image upload from gallery
 - Manual barcode entry
@@ -47,6 +47,7 @@ If ingredients are not available, the system transparently informs the user and 
 ### Safety Scoring Engine
 
 Analyzes:
+
 - Sugar levels
 - Sodium levels
 - Fat levels
@@ -66,11 +67,84 @@ Analyzes:
 - Focus on heart and metabolic risks
 - Voice narration support
 
-### AI Assistant (Baba)
-- Answers user questions about scanned products
-- Uses OpenAI GPT-4o-mini
-- Context-aware responses
-
 ---
 
 ## Architecture
+
+Frontend (React + TypeScript)
+│
+│ Barcode scanning
+│ Result UI
+│
+Backend (Express + TypeScript)
+│
+├── Scoring engine
+│
+External APIs
+└── Open Food Facts (product data)
+
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- React
+- TypeScript
+- Vite
+- TailwindCSS
+- html5-qrcode
+- React Query
+
+### Backend
+
+- Node.js
+- Express
+- TypeScript
+- Zod
+
+### Data Source
+
+- Open Food Facts API
+
+---
+
+## Screenshots
+
+### Home Page
+
+![Home](screenshots/home.png)
+
+### Scan Results
+
+![Scan Result](screenshots/result.png)
+
+### Baby Mode
+
+![Baby Mode](screenshots/baby.png)
+
+### Elderly Mode
+
+![Elderly Mode](screenshots/elderly.png)
+
+---
+
+## Demo
+
+**Live Demo:**  
+https://your-demo-link.vercel.app
+
+**Demo Video:**  
+https://youtube.com/your-demo-video
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/barcode-baba
+cd barcode-baba
+npm install
