@@ -153,11 +153,49 @@ https://youtube.com/your-demo-video
 
 ---
 
-## Installation
+## Scoring Logic
 
-Clone the repository:
+Barcode Baba calculates a safety score between 0 and 100 based on ingredient analysis and nutritional risk factors.
 
-```bash
-git clone https://github.com/yourusername/barcode-baba
-cd barcode-baba
-npm install
+### Factors considered
+
+**1. Sugar content**
+- High sugar reduces score
+- Especially strict penalties in Baby and Elderly modes
+
+**2. Sodium content**
+- High sodium reduces score significantly
+- Higher penalties in Elderly mode due to cardiovascular risks
+
+**3. Fat content**
+- Excessive saturated fat reduces score
+
+**4. Ingredient complexity**
+- Large number of ingredients reduces score
+- Highly complex formulations indicate ultra-processed food
+
+**5. Ultra-processed indicators**
+- Artificial additives, preservatives, emulsifiers, and flavor enhancers reduce score
+
+**6. Mode-specific adjustments**
+
+- **General mode:** Balanced scoring
+- **Baby mode:** Strictest scoring thresholds
+- **Elderly mode:** Additional penalties for sugar, sodium, and processed ingredients
+
+### Score interpretation
+
+| Score Range | Rating    |
+|------------|-----------|
+| 80–100     | SAFE      |
+| 60–79      | MODERATE  |
+| 40–59      | RISKY     |
+| 0–39       | AVOID     |
+
+### Missing ingredient handling
+
+If ingredients are not available:
+
+- No score is calculated
+- No rating is assigned
+- The system informs the user that scoring cannot be performed
